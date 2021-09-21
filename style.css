@@ -1,10 +1,40 @@
+:root {
+  --card-height: 40vh;
+}
+
 article {
   background: red;
   background: url('./background.jpg');
   background-size: cover;
   color: white;
-  width: 600px;
-  aspect-ratio: 4/3;
+  height: var(--card-height);
+  width: calc(var(--card-height) * 4 / 3);
   border-radius: 5px;
   margin: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+img {
+  position: absolute;
+  right: 0;
+  height: 110%;
+}
+
+h2 {
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.wip {
+  border: 2px dotted yellowgreen;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
