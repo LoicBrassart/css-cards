@@ -2,6 +2,13 @@
   --card-height: 40vh;
 }
 
+.fire {
+  background: url('https://c.tenor.com/VbezPY1TRaMAAAAM/fire-flames.gif');
+  background-size: contain;
+  width: calc(var(--card-height) * 4 / 3);
+  margin: 5px;
+}
+
 article {
   background: url('./background.jpg');
   background-size: cover;
@@ -9,9 +16,12 @@ article {
   height: var(--card-height);
   width: calc(var(--card-height) * 4 / 3);
   border-radius: 5px;
-  margin: 5px;
   overflow: hidden;
   position: relative;
+}
+
+article:hover {
+  animation: blinker 2s linear infinite;
 }
 
 img {
@@ -26,6 +36,7 @@ h2 {
   position: absolute;
   bottom: 0;
   background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  text-transform: capitalize;
 }
 
 .wip {
@@ -36,4 +47,16 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
 }
