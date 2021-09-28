@@ -10,6 +10,13 @@ function addCard(char) {
   inImg.setAttribute('alt', char.realName);
   newArticle.appendChild(inImg);
 
+  if (char.rarity === 'SS' || char.rarity === 'Z') {
+    const tierBadge = document.createElement('p');
+    tierBadge.setAttribute('class', 'center badge');
+    tierBadge.innerText = char.rarity;
+    newArticle.appendChild(tierBadge);
+  }
+
   const inH2 = document.createElement('h2');
   inH2.setAttribute('class', 'center');
   inH2.innerText = char.realName;
