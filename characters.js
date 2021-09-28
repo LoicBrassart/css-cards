@@ -1,18 +1,18 @@
 const main = document.querySelector('main');
 
-function addCard(name) {
+function addCard(char) {
   const newFire = document.createElement('div');
   newFire.setAttribute('class', 'fire');
 
   const newArticle = document.createElement('article');
   const inImg = document.createElement('img');
-  inImg.setAttribute('src', './' + name + '.png');
-  inImg.setAttribute('alt', name);
+  inImg.setAttribute('src', './' + char.slug + '.png');
+  inImg.setAttribute('alt', char.realName);
   newArticle.appendChild(inImg);
 
   const inH2 = document.createElement('h2');
   inH2.setAttribute('class', 'center');
-  inH2.innerText = name;
+  inH2.innerText = char.realName;
   newArticle.appendChild(inH2);
 
   newFire.appendChild(newArticle);
@@ -20,17 +20,49 @@ function addCard(name) {
 }
 
 const characters = [
-  'alika',
-  'amerpact',
-  'amisandra',
-  'bahamut',
-  'gatz',
-  'gugba',
-  'olber',
-  'pizfer',
+  {
+    realName: 'Alika',
+    slug: 'alika',
+    rarity: 'S',
+  },
+  {
+    realName: 'Amerpact',
+    slug: 'amerpact',
+    rarity: 'A',
+  },
+  {
+    realName: "A'misandra",
+    slug: 'amisandra',
+    rarity: 'SS',
+  },
+  {
+    realName: 'Bahamut',
+    slug: 'bahamut',
+    rarity: 'S',
+  },
+  {
+    realName: 'Gatz',
+    slug: 'gatz',
+    rarity: 'S',
+  },
+  {
+    realName: 'Gugba',
+    slug: 'gugba',
+    rarity: 'SS',
+  },
+  {
+    realName: 'Olber',
+    slug: 'olber',
+    rarity: 'SS',
+  },
+  {
+    realName: 'Pizfer',
+    slug: 'pizfer',
+    rarity: 'Z',
+  },
 ];
 
 for (let i = 0; i < characters.length; i++) {
-  const charName = characters[i];
-  addCard(charName);
+  const char = characters[i];
+  addCard(char);
 }
